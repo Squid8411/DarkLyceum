@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://v5f602xhqepy"]
+
+[ext_resource type="FontFile" uid="uid://bpiby3pslb4k7" path="res://fonts/PixelifySans-Regular.ttf" id="1_bm78j"]
+[ext_resource type="FontFile" uid="uid://bvy3jde3dr3sc" path="res://fonts/PixelifySans-Bold.ttf" id="2_palal"]
+[ext_resource type="Script" path="res://scenes/QuitButton.gd" id="3_tnlnu"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.541176, 0.521569, 0.513726, 1)
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 1152.0
+offset_bottom = 160.0
+theme_override_fonts/normal_font = ExtResource("1_bm78j")
+theme_override_fonts/bold_font = ExtResource("2_palal")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "[center]-- Dark Lyceum --[/center]"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 192.0
+offset_right = 768.0
+offset_bottom = 512.0
+theme_override_constants/separation = 15
+
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bm78j")
+theme_override_font_sizes/font_size = 30
+text = "Play"
+
+[node name="TutorialButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bm78j")
+theme_override_font_sizes/font_size = 30
+text = "Tutorial"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bm78j")
+theme_override_font_sizes/font_size = 30
+text = "Settings"
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bm78j")
+theme_override_font_sizes/font_size = 30
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bm78j")
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+script = ExtResource("3_tnlnu")
+
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="VBoxContainer/QuitButton" method="_on_pressed"]
