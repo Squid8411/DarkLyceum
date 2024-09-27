@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy2armwe7lnga"]
+
+[ext_resource type="SpriteFrames" uid="uid://dbmoabp108osx" path="res://character/player_sprite_frames.tres" id="1_5tvgw"]
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_5tvgw")
+animation = &"run"
+frame_progress = 0.280095
