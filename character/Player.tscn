@@ -1,19 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://dy2armwe7lnga"]
+[gd_scene load_steps=5 format=3 uid="uid://dy2armwe7lnga"]
 
 [ext_resource type="SpriteFrames" uid="uid://dbmoabp108osx" path="res://character/player_sprite_frames.tres" id="1_5tvgw"]
 [ext_resource type="Script" path="res://scripts/Player/player.gd" id="1_xtx4d"]
+[ext_resource type="Resource" uid="uid://c2q24ht0jr33g" path="res://character/player_input_actions.tres" id="2_ggc7m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aee4n"]
 radius = 5.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_xtx4d")
+actions = ExtResource("2_ggc7m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = ExtResource("1_5tvgw")
 animation = &"run"
-frame_progress = 0.802266
+frame = 2
+frame_progress = 0.70291
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
