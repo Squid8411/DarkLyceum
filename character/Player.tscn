@@ -1,16 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy2armwe7lnga"]
+[gd_scene load_steps=7 format=3 uid="uid://dy2armwe7lnga"]
 
 [ext_resource type="SpriteFrames" uid="uid://dbmoabp108osx" path="res://character/player_sprite_frames.tres" id="1_5tvgw"]
 [ext_resource type="Script" path="res://scripts/Player/player.gd" id="1_xtx4d"]
 [ext_resource type="Resource" uid="uid://c2q24ht0jr33g" path="res://character/player_input_actions.tres" id="2_ggc7m"]
 [ext_resource type="Script" path="res://scripts/Player/facing.gd" id="3_cbuob"]
+[ext_resource type="Script" path="res://scripts/Player/player_input.gd" id="5_gunbb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aee4n"]
-radius = 5.0
+radius = 5.09902
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_xtx4d")
-actions = ExtResource("2_ggc7m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
@@ -24,5 +24,8 @@ character = NodePath("..")
 position = Vector2(0, -8)
 sprite_frames = ExtResource("1_5tvgw")
 animation = &"run"
-frame = 2
-frame_progress = 0.70291
+
+[node name="PlayerInput" type="Node" parent="." node_paths=PackedStringArray("character")]
+script = ExtResource("5_gunbb")
+character = NodePath("..")
+actions = ExtResource("2_ggc7m")
