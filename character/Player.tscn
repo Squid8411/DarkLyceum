@@ -25,7 +25,7 @@ position = Vector2(0, -8)
 sprite_frames = ExtResource("1_5tvgw")
 animation = &"run"
 
-[node name="PlayerInput" type="Node" parent="." node_paths=PackedStringArray("character")]
+[node name="PlayerInput" type="Node" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("5_gunbb")
-character = NodePath("..")
+player = NodePath("..")
 actions = ExtResource("2_ggc7m")

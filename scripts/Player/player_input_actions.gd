@@ -6,5 +6,7 @@ extends Resource
 @export var right 	: StringName = "right"
 @export var up 		: StringName = "up"
 @export var down 	: StringName = "down"
-@export var jump 	: StringName = "jump"
+@export var jump 	: StringName = "up"
 @export var attack	: StringName = "attack"
+@export var shoot	: StringName = "shoot"
+@export var inventory	: StringName = "inventory"
