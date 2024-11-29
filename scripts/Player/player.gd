@@ -13,7 +13,6 @@ func _physics_process(delta: float) -> void:
 ##
 ## Returns true if jump succeeded or false if failed.
 func try_jump() -> bool:
-	prints(is_on_floor())
 	if is_on_floor():
 		_jump()
 		return true

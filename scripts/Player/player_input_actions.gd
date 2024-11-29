@@ -10,3 +10,4 @@ extends Resource
 @export var attack	: StringName = "attack"
 @export var shoot	: StringName = "shoot"
 @export var inventory	: StringName = "inventory"
+@export var back	: StringName = "back"
