@@ -1,4 +1,4 @@
-To download Git for Windows, use the following link: `https://git-scm.com/download/win`
+To download Git for Windows, use the following link: https://git-scm.com/download/win
 
 To clone this repository, use the following command: `git clone https://github.com/Squid8411/SoulsKnight.git`
 
