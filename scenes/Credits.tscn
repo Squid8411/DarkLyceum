@@ -38,6 +38,7 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = 280.0
 offset_bottom = 56.0
+focus_mode = 0
 theme_override_fonts/font = ExtResource("1_tmiue")
 theme_override_font_sizes/font_size = 24
 text = "Return to Main Menu"
