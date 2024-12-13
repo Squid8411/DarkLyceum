@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://me887orsolg8"]
+[gd_scene load_steps=4 format=3 uid="uid://me887orsolg8"]
 
+[ext_resource type="Script" path="res://scripts/Credits/credits.gd" id="1_8bfou"]
 [ext_resource type="FontFile" uid="uid://bpiby3pslb4k7" path="res://fonts/PixelifySans-Regular.ttf" id="1_tmiue"]
 [ext_resource type="Script" path="res://scripts/Credits/BackButton.gd" id="2_biqig"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8bfou")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
