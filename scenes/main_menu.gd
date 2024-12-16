@@ -1,5 +1,8 @@
 extends Control
 
+func _ready() -> void:
+	Engine.max_fps = 144
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("fullscreen"):
 		if DisplayServer.window_get_mode() == 3:

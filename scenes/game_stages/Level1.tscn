@@ -6,6 +6,9 @@
 [sub_resource type="GDScript" id="GDScript_4ib5n"]
 script/source = "extends Node2D
 
+func _ready() -> void:
+	Engine.max_fps = 144
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed(\"back\"):
 		get_tree().change_scene_to_file(\"res://scenes/MainMenu.tscn\")
@@ -33,3 +36,5 @@ remote_path = NodePath("Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="Player/RemoteTransform2D"]
 zoom = Vector2(1.5, 1.5)
+limit_bottom = 640
+limit_smoothed = true
