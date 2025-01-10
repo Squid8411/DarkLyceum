@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1xgyb234lbof"
-path="res://.godot/imported/idle.png-4cb52a89718c62ab66224f9b9c26d98a.ctex"
+uid="uid://c0gy7cxki7bas"
+path="res://.godot/imported/rest.png-44942db7505fc2c89f36246d3d571750.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemy (taurus)/Pack sprite sheet/knight/idle.png"
-dest_files=["res://.godot/imported/idle.png-4cb52a89718c62ab66224f9b9c26d98a.ctex"]
+source_file="res://sprites/player/Knight/rest.png"
+dest_files=["res://.godot/imported/rest.png-44942db7505fc2c89f36246d3d571750.ctex"]
 
 [params]
 

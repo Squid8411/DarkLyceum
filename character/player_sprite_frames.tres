@@ -1,6 +1,7 @@
-[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://dbmoabp108osx"]
+[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://dbmoabp108osx"]
 
 [ext_resource type="Texture2D" uid="uid://5k6apodkg0o2" path="res://sprites/tilemap/monochrome_tilemap_transparent_packed.png" id="1_2vtvm"]
+[ext_resource type="Texture2D" uid="uid://b1xgyb234lbof" path="res://sprites/player/Knight/idle.png" id="2_d5kyc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jedmb"]
 atlas = ExtResource("1_2vtvm")
@@ -21,6 +22,10 @@ region = Rect2(80, 224, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_rt5wn"]
 atlas = ExtResource("1_2vtvm")
 region = Rect2(80, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5st0"]
+atlas = ExtResource("2_d5kyc")
+region = Rect2(0, 0, 900, 350)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sq74e"]
 atlas = ExtResource("1_2vtvm")
@@ -66,6 +71,9 @@ animations = [{
 "speed": 10.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5st0")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sq74e")
 }, {

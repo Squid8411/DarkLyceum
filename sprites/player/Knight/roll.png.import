@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvnrx2sw1n2dw"
-path="res://.godot/imported/2ndpartcombo.png-4ebddb6b674a3a8f099d1914592a49a5.ctex"
+uid="uid://cxhbnrm0nm450"
+path="res://.godot/imported/roll.png-8b5a8f8b81a8ef35083d35be8a3535a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemy (taurus)/Pack sprite sheet/knight/2ndpartcombo.png"
-dest_files=["res://.godot/imported/2ndpartcombo.png-4ebddb6b674a3a8f099d1914592a49a5.ctex"]
+source_file="res://sprites/player/Knight/roll.png"
+dest_files=["res://.godot/imported/roll.png-8b5a8f8b81a8ef35083d35be8a3535a6.ctex"]
 
 [params]
 

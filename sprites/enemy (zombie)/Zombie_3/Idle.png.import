@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxhbnrm0nm450"
-path="res://.godot/imported/roll.png-3fafdcdaed47d9feba35839d0a317c4b.ctex"
+uid="uid://defy565lm1rt8"
+path="res://.godot/imported/Idle.png-510ed49c26a0257191ab9643c133de94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemy (taurus)/Pack sprite sheet/knight/roll.png"
-dest_files=["res://.godot/imported/roll.png-3fafdcdaed47d9feba35839d0a317c4b.ctex"]
+source_file="res://sprites/enemy (zombie)/Zombie_3/Idle.png"
+dest_files=["res://.godot/imported/Idle.png-510ed49c26a0257191ab9643c133de94.ctex"]
 
 [params]
 

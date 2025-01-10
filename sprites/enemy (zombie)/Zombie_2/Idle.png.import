@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmy5u7y2plofa"
-path="res://.godot/imported/singleattack.png-4594f3c66729e14316464d6243185e90.ctex"
+uid="uid://dcsaqumjmvq2n"
+path="res://.godot/imported/Idle.png-3cfa4cd539ea4d6759669b67c834bf39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemy (taurus)/Pack sprite sheet/knight/singleattack.png"
-dest_files=["res://.godot/imported/singleattack.png-4594f3c66729e14316464d6243185e90.ctex"]
+source_file="res://sprites/enemy (zombie)/Zombie_2/Idle.png"
+dest_files=["res://.godot/imported/Idle.png-3cfa4cd539ea4d6759669b67c834bf39.ctex"]
 
 [params]
 

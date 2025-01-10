@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr62wxeaaltcy"
-path="res://.godot/imported/jump.png-7f95b3a7589551654fb659939c6ff57d.ctex"
+uid="uid://dgxmff0qasi0g"
+path="res://.godot/imported/Walk.png-e16537b12c75b60ec899b88d5ee97291.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemy (taurus)/Pack sprite sheet/knight/jump.png"
-dest_files=["res://.godot/imported/jump.png-7f95b3a7589551654fb659939c6ff57d.ctex"]
+source_file="res://sprites/enemy (zombie)/Zombie_3/Walk.png"
+dest_files=["res://.godot/imported/Walk.png-e16537b12c75b60ec899b88d5ee97291.ctex"]
 
 [params]
 

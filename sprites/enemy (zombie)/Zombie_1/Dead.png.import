@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ostqysplsyha"
-path="res://.godot/imported/run.png-9f0fa7a605f7fa55bd419603820b81dc.ctex"
+uid="uid://dkeihejov1uy"
+path="res://.godot/imported/Dead.png-6c23c8af80caf15c2332de8acc706e60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemy (taurus)/Pack sprite sheet/knight/run.png"
-dest_files=["res://.godot/imported/run.png-9f0fa7a605f7fa55bd419603820b81dc.ctex"]
+source_file="res://sprites/enemy (zombie)/Zombie_1/Dead.png"
+dest_files=["res://.godot/imported/Dead.png-6c23c8af80caf15c2332de8acc706e60.ctex"]
 
 [params]
 

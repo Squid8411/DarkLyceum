@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0gy7cxki7bas"
-path="res://.godot/imported/rest.png-6f8a1a95c14eef6ec7e37da0c40dc7de.ctex"
+uid="uid://b3o8rq0yrantv"
+path="res://.godot/imported/Hurt.png-c2243eb26194509880880af85e1be97d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemy (taurus)/Pack sprite sheet/knight/rest.png"
-dest_files=["res://.godot/imported/rest.png-6f8a1a95c14eef6ec7e37da0c40dc7de.ctex"]
+source_file="res://sprites/enemy (zombie)/Zombie_2/Hurt.png"
+dest_files=["res://.godot/imported/Hurt.png-c2243eb26194509880880af85e1be97d.ctex"]
 
 [params]
 
