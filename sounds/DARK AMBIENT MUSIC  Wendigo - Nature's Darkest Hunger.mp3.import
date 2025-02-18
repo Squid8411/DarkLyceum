@@ -3,12 +3,11 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bgtxuucvoj4ox"
-path="res://.godot/imported/DARK AMBIENT MUSIC  Wendigo - Nature's Darkest Hunger.mp3-e0f3ab70561df42f5ad29758aaef8a23.mp3str"
+valid=false
 
 [deps]
 
 source_file="res://sounds/DARK AMBIENT MUSIC  Wendigo - Nature's Darkest Hunger.mp3"
-dest_files=["res://.godot/imported/DARK AMBIENT MUSIC  Wendigo - Nature's Darkest Hunger.mp3-e0f3ab70561df42f5ad29758aaef8a23.mp3str"]
 
 [params]
 

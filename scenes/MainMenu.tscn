@@ -1,14 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://v5f602xhqepy"]
+[gd_scene load_steps=14 format=3 uid="uid://v5f602xhqepy"]
 
 [ext_resource type="FontFile" uid="uid://bpiby3pslb4k7" path="res://fonts/PixelifySans-Regular.ttf" id="1_bm78j"]
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_qruud"]
-[ext_resource type="FontFile" uid="uid://bvy3jde3dr3sc" path="res://fonts/PixelifySans-Bold.ttf" id="2_palal"]
 [ext_resource type="Script" path="res://scripts/Main Menu/SettingsButton.gd" id="3_d0nbu"]
 [ext_resource type="Script" path="res://scripts/Main Menu/TutorialButton.gd" id="3_i0bsm"]
+[ext_resource type="Texture2D" uid="uid://cyhnojy1xygdl" path="res://sprites/buttons/loadgamebutton.png" id="3_loo6j"]
 [ext_resource type="Script" path="res://scripts/Main Menu/CreditsButton.gd" id="3_mexn5"]
 [ext_resource type="Script" path="res://scripts/Main Menu/PlayButton.gd" id="3_rkgiy"]
 [ext_resource type="Script" path="res://scripts/Main Menu/QuitButton.gd" id="3_tnlnu"]
 [ext_resource type="Script" path="res://scripts/Main Menu/FullScreenToggle.gd" id="4_v4ah1"]
+[ext_resource type="Texture2D" uid="uid://1wm5hei7iwkx" path="res://sprites/buttons/settingsbutton.png" id="6_qgh1u"]
+[ext_resource type="Texture2D" uid="uid://dlpkv7f10mtqs" path="res://sprites/buttons/quitbutton.png" id="8_8vxqq"]
+[ext_resource type="Texture2D" uid="uid://cq1okxpwpbn6g" path="res://sprites/background/181430 (1).png" id="9_v0epb"]
+[ext_resource type="Texture2D" uid="uid://bre26hkw68f1p" path="res://sprites/title/dark lyceum title.png" id="10_vj0ma"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -19,26 +23,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qruud")
 
-[node name="BackgroundColor" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
-color = Color(0.541176, 0.521569, 0.513726, 1)
+texture = ExtResource("9_v0epb")
+expand_mode = 1
 
-[node name="Title" type="RichTextLabel" parent="BackgroundColor"]
-texture_filter = 5
-texture_repeat = 1
-layout_mode = 0
-offset_top = 32.0
-offset_right = 1152.0
-offset_bottom = 160.0
-theme_override_fonts/normal_font = ExtResource("1_bm78j")
-theme_override_fonts/bold_font = ExtResource("2_palal")
-theme_override_font_sizes/normal_font_size = 80
-bbcode_enabled = true
-text = "[center]-- Dark Lyceum --[/center]"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="BackgroundColor"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
 layout_mode = 0
 offset_left = 384.0
 offset_top = 192.0
@@ -46,57 +39,45 @@ offset_right = 768.0
 offset_bottom = 512.0
 theme_override_constants/separation = 15
 
-[node name="PlayButton" type="Button" parent="BackgroundColor/VBoxContainer"]
+[node name="PlayButton" type="TextureButton" parent="TextureRect/VBoxContainer"]
 texture_filter = 5
 texture_repeat = 2
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("1_bm78j")
-theme_override_font_sizes/font_size = 30
-text = "Play"
+texture_normal = ExtResource("3_loo6j")
 script = ExtResource("3_rkgiy")
 
-[node name="TutorialButton" type="Button" parent="BackgroundColor/VBoxContainer"]
+[node name="TutorialButton" type="TextureButton" parent="TextureRect/VBoxContainer"]
 texture_filter = 5
 texture_repeat = 2
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("1_bm78j")
-theme_override_font_sizes/font_size = 30
-text = "Tutorial"
 script = ExtResource("3_i0bsm")
 
-[node name="SettingsButton" type="Button" parent="BackgroundColor/VBoxContainer"]
+[node name="SettingsButton" type="TextureButton" parent="TextureRect/VBoxContainer"]
 texture_filter = 5
 texture_repeat = 2
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("1_bm78j")
-theme_override_font_sizes/font_size = 30
-text = "Settings"
+texture_normal = ExtResource("6_qgh1u")
 script = ExtResource("3_d0nbu")
 
-[node name="CreditsButton" type="Button" parent="BackgroundColor/VBoxContainer"]
+[node name="CreditsButton" type="TextureButton" parent="TextureRect/VBoxContainer"]
 texture_filter = 5
 texture_repeat = 2
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("1_bm78j")
-theme_override_font_sizes/font_size = 30
-text = "Credits"
 script = ExtResource("3_mexn5")
 
-[node name="QuitButton" type="Button" parent="BackgroundColor/VBoxContainer"]
+[node name="QuitButton" type="TextureButton" parent="TextureRect/VBoxContainer"]
 texture_filter = 5
 texture_repeat = 2
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("1_bm78j")
-theme_override_font_sizes/font_size = 30
-text = "Quit"
+texture_normal = ExtResource("8_8vxqq")
 script = ExtResource("3_tnlnu")
 
-[node name="FullScreenToggle" type="CheckButton" parent="BackgroundColor"]
+[node name="FullScreenToggle" type="CheckButton" parent="TextureRect"]
 texture_filter = 5
 texture_repeat = 2
 layout_mode = 0
@@ -109,9 +90,18 @@ theme_override_font_sizes/font_size = 16
 text = "Toggle Fullscreen"
 script = ExtResource("4_v4ah1")
 
-[connection signal="pressed" from="BackgroundColor/VBoxContainer/PlayButton" to="BackgroundColor/VBoxContainer/PlayButton" method="_on_pressed"]
-[connection signal="pressed" from="BackgroundColor/VBoxContainer/TutorialButton" to="BackgroundColor/VBoxContainer/TutorialButton" method="_on_pressed"]
-[connection signal="pressed" from="BackgroundColor/VBoxContainer/SettingsButton" to="BackgroundColor/VBoxContainer/SettingsButton" method="_on_pressed"]
-[connection signal="pressed" from="BackgroundColor/VBoxContainer/CreditsButton" to="BackgroundColor/VBoxContainer/CreditsButton" method="_on_pressed"]
-[connection signal="pressed" from="BackgroundColor/VBoxContainer/QuitButton" to="BackgroundColor/VBoxContainer/QuitButton" method="_on_pressed"]
-[connection signal="toggled" from="BackgroundColor/FullScreenToggle" to="BackgroundColor/FullScreenToggle" method="_on_toggled"]
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 64.0
+offset_right = 960.0
+offset_bottom = 152.0
+texture = ExtResource("10_vj0ma")
+expand_mode = 1
+
+[connection signal="pressed" from="TextureRect/VBoxContainer/PlayButton" to="TextureRect/VBoxContainer/PlayButton" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/TutorialButton" to="TextureRect/VBoxContainer/TutorialButton" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/SettingsButton" to="TextureRect/VBoxContainer/SettingsButton" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/CreditsButton" to="TextureRect/VBoxContainer/CreditsButton" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/QuitButton" to="TextureRect/VBoxContainer/QuitButton" method="_on_pressed"]
+[connection signal="toggled" from="TextureRect/FullScreenToggle" to="TextureRect/FullScreenToggle" method="_on_toggled"]
