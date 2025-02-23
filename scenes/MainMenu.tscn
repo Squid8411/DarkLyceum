@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://v5f602xhqepy"]
+[gd_scene load_steps=21 format=3 uid="uid://v5f602xhqepy"]
 
 [ext_resource type="FontFile" uid="uid://bpiby3pslb4k7" path="res://fonts/PixelifySans-Regular.ttf" id="1_bm78j"]
+[ext_resource type="Theme" uid="uid://rgs6l1mifm5p" path="res://styles & themes/new_ui.tres" id="1_exbht"]
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_qruud"]
 [ext_resource type="Texture2D" uid="uid://n5odypw3np3p" path="res://sprites/background/181430.jpg" id="2_5w7tv"]
 [ext_resource type="Script" path="res://scripts/Main Menu/SettingsButton.gd" id="3_d0nbu"]
@@ -13,6 +14,12 @@
 [ext_resource type="Texture2D" uid="uid://1wm5hei7iwkx" path="res://sprites/buttons/settingsbutton.png" id="6_qgh1u"]
 [ext_resource type="Texture2D" uid="uid://dlpkv7f10mtqs" path="res://sprites/buttons/quitbutton.png" id="8_8vxqq"]
 [ext_resource type="Texture2D" uid="uid://bre26hkw68f1p" path="res://sprites/title/dark lyceum title.png" id="10_vj0ma"]
+[ext_resource type="Texture2D" uid="uid://bfv1yh87qm1g2" path="res://sprites/new_ui/UI-001.png" id="15_gk0qr"]
+[ext_resource type="Script" path="res://scripts/New UI/play_button.gd" id="16_m1yh2"]
+[ext_resource type="Script" path="res://scripts/New UI/tutorial_button.gd" id="17_hj1x6"]
+[ext_resource type="Script" path="res://scripts/New UI/settings_button.gd" id="18_euq7k"]
+[ext_resource type="Script" path="res://scripts/New UI/credits_button.gd" id="19_ybg10"]
+[ext_resource type="Script" path="res://scripts/New UI/quit_button.gd" id="20_axirh"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -21,6 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_exbht")
 script = ExtResource("1_qruud")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -40,6 +48,7 @@ offset_bottom = 512.0
 theme_override_constants/separation = 15
 
 [node name="PlayButton" type="TextureButton" parent="TextureRect/VBoxContainer"]
+visible = false
 texture_filter = 5
 texture_repeat = 2
 layout_mode = 2
@@ -48,6 +57,7 @@ texture_normal = ExtResource("3_loo6j")
 script = ExtResource("3_rkgiy")
 
 [node name="TutorialButton" type="TextureButton" parent="TextureRect/VBoxContainer"]
+visible = false
 texture_filter = 5
 texture_repeat = 2
 layout_mode = 2
@@ -55,6 +65,7 @@ focus_mode = 0
 script = ExtResource("3_i0bsm")
 
 [node name="SettingsButton" type="TextureButton" parent="TextureRect/VBoxContainer"]
+visible = false
 texture_filter = 5
 texture_repeat = 2
 layout_mode = 2
@@ -63,6 +74,7 @@ texture_normal = ExtResource("6_qgh1u")
 script = ExtResource("3_d0nbu")
 
 [node name="CreditsButton" type="TextureButton" parent="TextureRect/VBoxContainer"]
+visible = false
 texture_filter = 5
 texture_repeat = 2
 layout_mode = 2
@@ -70,6 +82,7 @@ focus_mode = 0
 script = ExtResource("3_mexn5")
 
 [node name="QuitButton" type="TextureButton" parent="TextureRect/VBoxContainer"]
+visible = false
 texture_filter = 5
 texture_repeat = 2
 layout_mode = 2
@@ -99,9 +112,79 @@ offset_bottom = 152.0
 texture = ExtResource("10_vj0ma")
 expand_mode = 1
 
+[node name="Menu" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -139.0
+offset_right = 125.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_gk0qr")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Play"
+script = ExtResource("16_m1yh2")
+
+[node name="TutorialButton" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Tutorial"
+script = ExtResource("17_hj1x6")
+
+[node name="SettingsButton" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Settings"
+script = ExtResource("18_euq7k")
+
+[node name="CreditsButton" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Credits"
+script = ExtResource("19_ybg10")
+
+[node name="QuitButton" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Quit"
+script = ExtResource("20_axirh")
+
 [connection signal="pressed" from="TextureRect/VBoxContainer/PlayButton" to="TextureRect/VBoxContainer/PlayButton" method="_on_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/TutorialButton" to="TextureRect/VBoxContainer/TutorialButton" method="_on_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/SettingsButton" to="TextureRect/VBoxContainer/SettingsButton" method="_on_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/CreditsButton" to="TextureRect/VBoxContainer/CreditsButton" method="_on_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/QuitButton" to="TextureRect/VBoxContainer/QuitButton" method="_on_pressed"]
 [connection signal="toggled" from="TextureRect/FullScreenToggle" to="TextureRect/FullScreenToggle" method="_on_toggled"]
+[connection signal="pressed" from="Menu/VBoxContainer/PlayButton" to="Menu/VBoxContainer/PlayButton" method="_on_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/TutorialButton" to="Menu/VBoxContainer/TutorialButton" method="_on_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/SettingsButton" to="Menu/VBoxContainer/SettingsButton" method="_on_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/CreditsButton" to="Menu/VBoxContainer/CreditsButton" method="_on_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/QuitButton" to="Menu/VBoxContainer/QuitButton" method="_on_pressed"]
