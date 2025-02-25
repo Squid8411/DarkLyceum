@@ -285,6 +285,8 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(10, 10)
 script = ExtResource("1_xtx4d")
+move_speed = null
+jump_force = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-11.2, -96)

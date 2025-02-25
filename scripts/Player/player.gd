@@ -1,11 +1,12 @@
 class_name Player
-extends PlatformerCharacter2D
-
-@export_range(0, 100, .2, "or_greater") var move_speed : float = 50.0
-@export_range(0, 100, .2, "or_greater") var jump_force : float = 100.0
+extends CharacterBody2D
 
 @onready var ap = $AnimationPlayer
 @onready var sprite = $Sprite2D
+
+@export var speed : 	int = 400
+@export var jumpforce : int = 400
+@export var gravity : 	int = 981
 
 func _physics_process(delta: float) -> void:
 ## Determine the player's current facing state and flips the sprite accordingly.
@@ -13,23 +14,21 @@ func _physics_process(delta: float) -> void:
 	if horizontal_direction != 0:
 		sprite.flip_h = (horizontal_direction == -1)
 	
-## Sets the current velocity and gravity together with movement normalization.
-	velocity.x = move_speed * direction.x
-	apply_gravity(delta)
-	move_and_slide()
+## Player movement script + Updating the animations every frame.
+	var direction = Input.get_axis("left", "right")
+	velocity.x = direction * speed
 	update_animations(horizontal_direction)
 	
-## Make the character jump if possible.
-## Returns true if jump succeeded or false if failed.
-func try_jump() -> bool:
-	if is_on_floor():
-		_jump()
-		return true
+## Player gravity.
+	if not is_on_floor():
+		velocity.y += gravity * delta
 	
-	return false
-## Perform a ground jump.
-func _jump():
-	velocity.y -= jump_force
+# Player jump script.
+	if Input.is_action_just_pressed("up") and is_on_floor():
+		velocity.y -= jumpforce
+		
+# Make the character move normally.
+	move_and_slide()
 	
 ## Updates animations depending on the current state.
 func update_animations(horizontal_direction):
