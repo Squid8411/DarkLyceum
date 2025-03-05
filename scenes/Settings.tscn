@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://km61p78ke0a8"]
 
-[ext_resource type="Script" path="res://scripts/Settings/settings.gd" id="1_k5col"]
+[ext_resource type="Script" uid="uid://v3fk87elahpu" path="res://scripts/Settings/settings.gd" id="1_k5col"]
 [ext_resource type="FontFile" uid="uid://bpiby3pslb4k7" path="res://fonts/PixelifySans-Regular.ttf" id="1_pled4"]
 [ext_resource type="FontFile" uid="uid://bvy3jde3dr3sc" path="res://fonts/PixelifySans-Bold.ttf" id="2_tb6ym"]
-[ext_resource type="Script" path="res://scenes/cancelbutton.gd" id="3_ub347"]
+[ext_resource type="Script" uid="uid://dj3fwn5y8076y" path="res://scenes/cancelbutton.gd" id="3_ub347"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3

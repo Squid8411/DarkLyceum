@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var speed : 	int = 400
 @export var jumpforce : int = 400
 @export var gravity : 	int = 981
+@export var attacking : bool = false
 
 func _physics_process(delta: float) -> void:
 ## Determine the player's current facing state and flips the sprite accordingly.
@@ -17,19 +18,37 @@ func _physics_process(delta: float) -> void:
 ## Player movement script + Updating the animations every frame.
 	var direction = Input.get_axis("left", "right")
 	velocity.x = direction * speed
-	update_animations(horizontal_direction)
 	
 ## Player gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	
-# Player jump script.
+		
+## Attack function for the player.
+	if Input.is_action_just_pressed("attack") and is_on_floor():
+		attack()
+		
+## Re-focus on horizontal/vertical movement if the player is no longer attacking
+	if not attacking:
+		update_animations(horizontal_direction)
+		
+## Player jump script.
 	if Input.is_action_just_pressed("up") and is_on_floor():
 		velocity.y -= jumpforce
 		
-# Make the character move normally.
+## Make the character capable of movement.
 	move_and_slide()
 	
+## Attack function.
+func attack():
+	attacking = true
+	speed = 0
+	ap.play("attack")
+	
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "attack":
+		attacking = false
+		speed = 400
+		
 ## Updates animations depending on the current state.
 func update_animations(horizontal_direction):
 	if is_on_floor():
