@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://km61p78ke0a8"]
+[gd_scene load_steps=6 format=3 uid="uid://km61p78ke0a8"]
 
+[ext_resource type="Theme" uid="uid://rgs6l1mifm5p" path="res://styles & themes/new_ui.tres" id="1_8e7v8"]
 [ext_resource type="Script" uid="uid://v3fk87elahpu" path="res://scripts/Settings/settings.gd" id="1_k5col"]
 [ext_resource type="FontFile" uid="uid://bpiby3pslb4k7" path="res://fonts/PixelifySans-Regular.ttf" id="1_pled4"]
 [ext_resource type="FontFile" uid="uid://bvy3jde3dr3sc" path="res://fonts/PixelifySans-Bold.ttf" id="2_tb6ym"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_8e7v8")
 script = ExtResource("1_k5col")
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
@@ -19,7 +21,7 @@ layout_mode = 0
 offset_left = 1.0
 offset_right = 1153.0
 offset_bottom = 648.0
-color = Color(0.541176, 0.521569, 0.513726, 1)
+color = Color(0.495603, 0.534488, 0.544897, 1)
 
 [node name="Title" type="RichTextLabel" parent="BackgroundColor"]
 texture_filter = 5
@@ -42,23 +44,14 @@ offset_right = 472.0
 offset_bottom = 492.0
 theme_override_constants/separation = 15
 
-[node name="Video Settingsbutton" type="Button" parent="BackgroundColor/VBoxContainer"]
-texture_filter = 5
-texture_repeat = 2
-layout_mode = 2
-focus_mode = 0
-theme_override_fonts/font = ExtResource("1_pled4")
-theme_override_font_sizes/font_size = 30
-text = "Video settings"
-
 [node name="Controlsbutton" type="Button" parent="BackgroundColor"]
 texture_filter = 5
 texture_repeat = 2
 layout_mode = 0
-offset_left = 515.0
-offset_top = 173.0
-offset_right = 736.0
-offset_bottom = 218.0
+offset_left = 639.0
+offset_top = 320.0
+offset_right = 959.0
+offset_bottom = 384.0
 focus_mode = 0
 theme_override_fonts/font = ExtResource("1_pled4")
 theme_override_font_sizes/font_size = 30
@@ -68,23 +61,36 @@ text = "Controls"
 texture_filter = 5
 texture_repeat = 2
 layout_mode = 0
-offset_left = 483.0
-offset_top = 273.0
-offset_right = 704.0
-offset_bottom = 318.0
+offset_left = 639.0
+offset_top = 192.0
+offset_right = 959.0
+offset_bottom = 256.0
 focus_mode = 0
 theme_override_fonts/font = ExtResource("1_pled4")
 theme_override_font_sizes/font_size = 30
-text = "Audio"
+text = "Music & SFX"
+
+[node name="Video Settingsbutton" type="Button" parent="BackgroundColor"]
+texture_filter = 5
+texture_repeat = 2
+layout_mode = 2
+offset_left = 191.0
+offset_top = 192.0
+offset_right = 511.0
+offset_bottom = 256.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_pled4")
+theme_override_font_sizes/font_size = 30
+text = "Video Settings"
 
 [node name="Gameplay" type="Button" parent="."]
 texture_filter = 5
 texture_repeat = 2
 layout_mode = 0
-offset_left = 154.0
-offset_top = 276.0
-offset_right = 375.0
-offset_bottom = 321.0
+offset_left = 192.0
+offset_top = 320.0
+offset_right = 512.0
+offset_bottom = 384.0
 focus_mode = 0
 theme_override_fonts/font = ExtResource("1_pled4")
 theme_override_font_sizes/font_size = 30
@@ -94,18 +100,18 @@ text = "Gameplay"
 texture_filter = 5
 texture_repeat = 2
 layout_mode = 0
-offset_left = 750.0
-offset_top = 419.0
-offset_right = 971.0
-offset_bottom = 464.0
+offset_left = 416.0
+offset_top = 472.0
+offset_right = 736.0
+offset_bottom = 536.0
 focus_mode = 0
 theme_override_fonts/font = ExtResource("1_pled4")
 theme_override_font_sizes/font_size = 30
-text = "Cancel"
+text = "Return to Main Menu"
 script = ExtResource("3_ub347")
 
-[connection signal="pressed" from="BackgroundColor/VBoxContainer/Video Settingsbutton" to="BackgroundColor/VBoxContainer/Video Settingsbutton" method="_on_pressed"]
 [connection signal="pressed" from="BackgroundColor/Controlsbutton" to="BackgroundColor/Controlsbutton" method="_on_pressed"]
 [connection signal="pressed" from="BackgroundColor/Audiobutton" to="BackgroundColor/Audiobutton" method="_on_pressed"]
+[connection signal="pressed" from="BackgroundColor/Video Settingsbutton" to="BackgroundColor/Video Settingsbutton" method="_on_pressed"]
 [connection signal="pressed" from="Gameplay" to="Gameplay" method="_on_pressed"]
 [connection signal="pressed" from="Cancelbutton" to="Cancelbutton" method="_on_pressed"]
