@@ -1,0 +1,117 @@
+[gd_scene load_steps=10 format=3 uid="uid://v5f602xhqepy"]
+
+[ext_resource type="FontFile" uid="uid://bpiby3pslb4k7" path="res://fonts/PixelifySans-Regular.ttf" id="1_bm78j"]
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_qruud"]
+[ext_resource type="FontFile" uid="uid://bvy3jde3dr3sc" path="res://fonts/PixelifySans-Bold.ttf" id="2_palal"]
+[ext_resource type="Script" path="res://scripts/Main Menu/SettingsButton.gd" id="3_d0nbu"]
+[ext_resource type="Script" path="res://scripts/Main Menu/TutorialButton.gd" id="3_i0bsm"]
+[ext_resource type="Script" path="res://scripts/Main Menu/CreditsButton.gd" id="3_mexn5"]
+[ext_resource type="Script" path="res://scripts/Main Menu/PlayButton.gd" id="3_rkgiy"]
+[ext_resource type="Script" path="res://scripts/Main Menu/QuitButton.gd" id="3_tnlnu"]
+[ext_resource type="Script" path="res://scripts/Main Menu/FullScreenToggle.gd" id="4_v4ah1"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qruud")
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.541176, 0.521569, 0.513726, 1)
+
+[node name="Title" type="RichTextLabel" parent="BackgroundColor"]
+texture_filter = 5
+texture_repeat = 1
+layout_mode = 0
+offset_top = 32.0
+offset_right = 1152.0
+offset_bottom = 160.0
+theme_override_fonts/normal_font = ExtResource("1_bm78j")
+theme_override_fonts/bold_font = ExtResource("2_palal")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "[center]-- Dark Lyceum --[/center]"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BackgroundColor"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 192.0
+offset_right = 768.0
+offset_bottom = 512.0
+theme_override_constants/separation = 15
+
+[node name="PlayButton" type="Button" parent="BackgroundColor/VBoxContainer"]
+texture_filter = 5
+texture_repeat = 2
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_bm78j")
+theme_override_font_sizes/font_size = 30
+text = "Play"
+script = ExtResource("3_rkgiy")
+
+[node name="TutorialButton" type="Button" parent="BackgroundColor/VBoxContainer"]
+texture_filter = 5
+texture_repeat = 2
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_bm78j")
+theme_override_font_sizes/font_size = 30
+text = "Tutorial"
+script = ExtResource("3_i0bsm")
+
+[node name="SettingsButton" type="Button" parent="BackgroundColor/VBoxContainer"]
+texture_filter = 5
+texture_repeat = 2
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_bm78j")
+theme_override_font_sizes/font_size = 30
+text = "Settings"
+script = ExtResource("3_d0nbu")
+
+[node name="CreditsButton" type="Button" parent="BackgroundColor/VBoxContainer"]
+texture_filter = 5
+texture_repeat = 2
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_bm78j")
+theme_override_font_sizes/font_size = 30
+text = "Credits"
+script = ExtResource("3_mexn5")
+
+[node name="QuitButton" type="Button" parent="BackgroundColor/VBoxContainer"]
+texture_filter = 5
+texture_repeat = 2
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_bm78j")
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+script = ExtResource("3_tnlnu")
+
+[node name="FullScreenToggle" type="CheckButton" parent="BackgroundColor"]
+texture_filter = 5
+texture_repeat = 2
+layout_mode = 0
+offset_left = 968.0
+offset_right = 1152.0
+offset_bottom = 31.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_bm78j")
+theme_override_font_sizes/font_size = 16
+text = "Toggle Fullscreen"
+script = ExtResource("4_v4ah1")
+
+[connection signal="pressed" from="BackgroundColor/VBoxContainer/PlayButton" to="BackgroundColor/VBoxContainer/PlayButton" method="_on_pressed"]
+[connection signal="pressed" from="BackgroundColor/VBoxContainer/TutorialButton" to="BackgroundColor/VBoxContainer/TutorialButton" method="_on_pressed"]
+[connection signal="pressed" from="BackgroundColor/VBoxContainer/SettingsButton" to="BackgroundColor/VBoxContainer/SettingsButton" method="_on_pressed"]
+[connection signal="pressed" from="BackgroundColor/VBoxContainer/CreditsButton" to="BackgroundColor/VBoxContainer/CreditsButton" method="_on_pressed"]
+[connection signal="pressed" from="BackgroundColor/VBoxContainer/QuitButton" to="BackgroundColor/VBoxContainer/QuitButton" method="_on_pressed"]
+[connection signal="toggled" from="BackgroundColor/FullScreenToggle" to="BackgroundColor/FullScreenToggle" method="_on_toggled"]

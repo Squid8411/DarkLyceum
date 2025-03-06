@@ -1,0 +1,111 @@
+[gd_scene load_steps=5 format=3 uid="uid://km61p78ke0a8"]
+
+[ext_resource type="Script" uid="uid://dnsr7vs38mucj" path="res://scripts/Settings/settings.gd" id="1_k5col"]
+[ext_resource type="FontFile" uid="uid://bpiby3pslb4k7" path="res://fonts/PixelifySans-Regular.ttf" id="1_pled4"]
+[ext_resource type="FontFile" uid="uid://bvy3jde3dr3sc" path="res://fonts/PixelifySans-Bold.ttf" id="2_tb6ym"]
+[ext_resource type="Script" uid="uid://bfutkxiw3pwpb" path="res://scenes/cancelbutton.gd" id="3_ub347"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k5col")
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 1153.0
+offset_bottom = 648.0
+color = Color(0.541176, 0.521569, 0.513726, 1)
+
+[node name="Title" type="RichTextLabel" parent="BackgroundColor"]
+texture_filter = 5
+texture_repeat = 1
+layout_mode = 0
+offset_top = 32.0
+offset_right = 1152.0
+offset_bottom = 160.0
+theme_override_fonts/normal_font = ExtResource("1_pled4")
+theme_override_fonts/bold_font = ExtResource("2_tb6ym")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "[center]-- Settings --[/center]"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BackgroundColor"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 172.0
+offset_right = 472.0
+offset_bottom = 492.0
+theme_override_constants/separation = 15
+
+[node name="Video Settingsbutton" type="Button" parent="BackgroundColor/VBoxContainer"]
+texture_filter = 5
+texture_repeat = 2
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_pled4")
+theme_override_font_sizes/font_size = 30
+text = "Video settings"
+
+[node name="Controlsbutton" type="Button" parent="BackgroundColor"]
+texture_filter = 5
+texture_repeat = 2
+layout_mode = 0
+offset_left = 515.0
+offset_top = 173.0
+offset_right = 736.0
+offset_bottom = 218.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_pled4")
+theme_override_font_sizes/font_size = 30
+text = "Controls"
+
+[node name="Audiobutton" type="Button" parent="BackgroundColor"]
+texture_filter = 5
+texture_repeat = 2
+layout_mode = 0
+offset_left = 483.0
+offset_top = 273.0
+offset_right = 704.0
+offset_bottom = 318.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_pled4")
+theme_override_font_sizes/font_size = 30
+text = "Audio"
+
+[node name="Gameplay" type="Button" parent="."]
+texture_filter = 5
+texture_repeat = 2
+layout_mode = 0
+offset_left = 154.0
+offset_top = 276.0
+offset_right = 375.0
+offset_bottom = 321.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_pled4")
+theme_override_font_sizes/font_size = 30
+text = "Gameplay"
+
+[node name="Cancelbutton" type="Button" parent="."]
+texture_filter = 5
+texture_repeat = 2
+layout_mode = 0
+offset_left = 750.0
+offset_top = 419.0
+offset_right = 971.0
+offset_bottom = 464.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_pled4")
+theme_override_font_sizes/font_size = 30
+text = "Cancel"
+script = ExtResource("3_ub347")
+
+[connection signal="pressed" from="BackgroundColor/VBoxContainer/Video Settingsbutton" to="BackgroundColor/VBoxContainer/Video Settingsbutton" method="_on_pressed"]
+[connection signal="pressed" from="BackgroundColor/Controlsbutton" to="BackgroundColor/Controlsbutton" method="_on_pressed"]
+[connection signal="pressed" from="BackgroundColor/Audiobutton" to="BackgroundColor/Audiobutton" method="_on_pressed"]
+[connection signal="pressed" from="Gameplay" to="Gameplay" method="_on_pressed"]
+[connection signal="pressed" from="Cancelbutton" to="Cancelbutton" method="_on_pressed"]

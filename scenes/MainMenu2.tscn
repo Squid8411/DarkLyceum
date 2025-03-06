@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://dkqji5cfpvsiv"]
+
+[ext_resource type="Theme" uid="uid://rgs6l1mifm5p" path="res://styles & themes/new_ui.tres" id="1_xsbuc"]
+[ext_resource type="Texture2D" uid="uid://bfv1yh87qm1g2" path="res://sprites/new_ui/UI-001.png" id="1_y0t2e"]
+[ext_resource type="Script" uid="uid://b5fd77cevsapm" path="res://scripts/New UI/play_button.gd" id="4_0n5vy"]
+[ext_resource type="Script" uid="uid://ckt5i8j7x181r" path="res://scripts/New UI/settings_button.gd" id="5_442xc"]
+[ext_resource type="Script" uid="uid://bvehhtk2hrrup" path="res://scripts/New UI/tutorial_button.gd" id="5_do7pw"]
+[ext_resource type="Script" uid="uid://c8gyo83i6buef" path="res://scripts/New UI/quit_button.gd" id="6_xo1kg"]
+[ext_resource type="Script" uid="uid://bccx7cyhjissp" path="res://scripts/New UI/credits_button.gd" id="7_qq8cx"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xsbuc")
+
+[node name="Menu" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -111.0
+offset_right = 73.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_y0t2e")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Play"
+script = ExtResource("4_0n5vy")
+
+[node name="TutorialButton" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+text = "Tutorial"
+script = ExtResource("5_do7pw")
+
+[node name="SettingsButton" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Settings"
+script = ExtResource("5_442xc")
+
+[node name="CreditsButton" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+script = ExtResource("7_qq8cx")
+
+[node name="QuitButton" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Quit"
+script = ExtResource("6_xo1kg")
+
+[connection signal="pressed" from="Menu/VBoxContainer/PlayButton" to="Menu/VBoxContainer/PlayButton" method="_on_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/TutorialButton" to="Menu/VBoxContainer/TutorialButton" method="_on_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/SettingsButton" to="Menu/VBoxContainer/SettingsButton" method="_on_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/CreditsButton" to="Menu/VBoxContainer/CreditsButton" method="_on_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/QuitButton" to="Menu/VBoxContainer/QuitButton" method="_on_pressed"]
