@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://1xiqwshufh7v"]
+
+[ext_resource type="FontFile" uid="uid://bpiby3pslb4k7" path="res://fonts/PixelifySans-Regular.ttf" id="1_ifquj"]
+[ext_resource type="Script" uid="uid://bkdlw0edhk47m" path="res://scenes/story/story_1.gd" id="1_mvkqy"]
+[ext_resource type="Theme" uid="uid://rgs6l1mifm5p" path="res://styles & themes/new_ui.tres" id="1_onxma"]
+
+[node name="Story" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_onxma")
+script = ExtResource("1_mvkqy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_top = 152.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_fonts/normal_font = ExtResource("1_ifquj")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]Marc is aan het werk op school, en de dag loopt ten einde. Nadat alle leerlingen vertrokken zijn, valt Marc langzaam in slaap...[/center]"
+
+[node name="Button" type="Button" parent="ColorRect/RichTextLabel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0555556
+anchor_right = 0.0694444
+anchor_bottom = 0.0322581
+offset_left = 512.0
+offset_top = 360.0
+offset_right = 624.0
+offset_bottom = 408.0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 40
+text = "Volgende"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="ColorRect/RichTextLabel/Button" to="." method="_on_button_pressed"]

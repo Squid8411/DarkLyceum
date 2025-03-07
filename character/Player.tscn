@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dy2armwe7lnga"]
+[gd_scene load_steps=19 format=3 uid="uid://dy2armwe7lnga"]
 
 [ext_resource type="Script" uid="uid://cv4nxakvgscux" path="res://scripts/Player/player.gd" id="1_xtx4d"]
 [ext_resource type="Texture2D" uid="uid://bkrdhp6ik8jll" path="res://assets/_Idle.png" id="3_061d5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dw2qs5g8hr1cw" path="res://assets/_AttackNoMovement.png" id="7_i0ei3"]
 [ext_resource type="Texture2D" uid="uid://ds1c3ns4fk75x" path="res://assets/_Jump.png" id="7_mbdxo"]
 [ext_resource type="Texture2D" uid="uid://bm3d1dwe3c85a" path="res://assets/_Fall.png" id="8_jku25"]
+[ext_resource type="Texture2D" uid="uid://ddao4s1gkyxc1" path="res://assets/_DeathNoMovement.png" id="8_pm5hv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0h65s"]
 radius = 50.4
@@ -113,6 +114,57 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_hdfyy"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_pm5hv")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
 
 [sub_resource type="Animation" id="Animation_gvesf"]
@@ -330,17 +382,21 @@ tracks/3/keys = {
 _data = {
 &"RESET": SubResource("Animation_y86dc"),
 &"attack": SubResource("Animation_pm5hv"),
+&"die": SubResource("Animation_hdfyy"),
 &"fall": SubResource("Animation_gvesf"),
 &"idle": SubResource("Animation_xypqo"),
 &"jump": SubResource("Animation_4cmf2"),
 &"run": SubResource("Animation_xf81s")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pm5hv"]
+size = Vector2(162.4, 207.7)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(10, 10)
 script = ExtResource("1_xtx4d")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
 position = Vector2(-11.2, -96)
 shape = SubResource("CapsuleShape2D_0h65s")
 
@@ -348,17 +404,24 @@ shape = SubResource("CapsuleShape2D_0h65s")
 script = ExtResource("3_cbuob")
 character = NodePath("..")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Player"]]
 position = Vector2(15.2, -200)
 scale = Vector2(5, 5)
 texture = ExtResource("3_061d5")
 hframes = 10
 frame = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["Player"]]
 libraries = {
 &"": SubResource("AnimationLibrary_bq67e")
 }
 autoplay = "idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(158.8, -104.65)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_pm5hv")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

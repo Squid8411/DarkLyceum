@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnna6hn6rgmrl"]
+
+[ext_resource type="FontFile" uid="uid://bpiby3pslb4k7" path="res://fonts/PixelifySans-Regular.ttf" id="1_8fe6b"]
+[ext_resource type="Theme" uid="uid://rgs6l1mifm5p" path="res://styles & themes/new_ui.tres" id="1_n4bkd"]
+[ext_resource type="Script" uid="uid://dk871ja8bb26w" path="res://scenes/story/story_4.gd" id="2_hruix"]
+
+[node name="Story" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_n4bkd")
+script = ExtResource("2_hruix")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_top = 152.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_fonts/normal_font = ExtResource("1_8fe6b")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]Marc zoekt verder en vindt iets over ene Koning Lectoris. Marc weet wat hem te doen staat als hij de mensheid wil redden. Als nobele ridder gaat hij op stap...[/center]"
+
+[node name="Button" type="Button" parent="ColorRect/RichTextLabel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.111111
+anchor_top = 0.33871
+anchor_right = 0.0138889
+anchor_bottom = 0.370968
+offset_left = 576.0
+offset_top = 208.0
+offset_right = 688.0
+offset_bottom = 256.0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 40
+text = "Volgende"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="ColorRect/RichTextLabel/Button" to="." method="_on_button_pressed"]
